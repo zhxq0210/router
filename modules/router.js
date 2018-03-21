@@ -1,6 +1,7 @@
 const fs = require("fs")
 
 function router_render(url,res,type){
+    type = type ? type :"text"
     if(type == "text"){
         res.writeHead(200,{"Content_Type":"text/html"});
         let fileText = fs.readFileSync(url,"utf8")
